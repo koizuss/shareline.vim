@@ -7,6 +7,10 @@ shareline.vim
 
 ※ VimのyankをOSのクリップボードと共有すると捗ります
 
+## Requirements
+
+- git
+
 ## Usage
 
 Run `:ShareLine`
@@ -19,6 +23,7 @@ Run `:ShareLine`
 - 以下の環境でしか動作確認できていません :bow:
   - macOS 10.15.6（19G2021）
   - NVIM v0.4.4
+  - git version 2.24.3 (Apple Git-128)
 
 ## Issues
 
