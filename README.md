@@ -11,9 +11,22 @@ Run `:ShareLine`
 
 - 現在のファイル&カーソル行をGithubのURLに変換してyank
 
-## TODOs
+## Remarks
+
+- いまのところGithubリポジトリにしか対応していません（今後他も対応したいBitbucketとかGitLabとか）
+- 以下の環境でしか動作確認できていません :bow:
+  - macOS 10.15.6（19G2021）
+  - NVIM v0.4.4
+
+## Issues
 
 - エラー処理
   - gitコマンドがない
   - gitリポジトリじゃない
   - remoteが設定されていない
+
+## License
+
+shareline.vim is distributed under Vim's [license][4].
+
+[4]: http://vimdoc.sourceforge.net/htmldoc/uganda.html
