@@ -17,6 +17,8 @@ Run `:ShareLine`
 
 - 現在のファイル&カーソル行をGithubのURLに変換してyank
 
+[usage](./misc/shareline.vim_usage_1.gif)
+
 ## Remarks
 
 - いまのところGithubリポジトリにしか対応していません（今後他も対応したいBitbucketとかGitLabとか）
