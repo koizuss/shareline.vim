@@ -10,6 +10,7 @@ set cpo&vim
 function! shareline#helloworld()
   let line = line(".")
   let remote = substitute(system('git remote get-url origin'), '\n\+$', '', '')
+  let commit = substitute(system('git show -s --format=%H'), '\n\+$', '', '')
   exec "let @+ = remote"
   echo "Hello World!!!!!!!!!!!!!!!!!" . remote
 endfunction

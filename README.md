@@ -11,7 +11,7 @@ shareline.vim
     - gitコマンドがない
     - gitリポジトリじゃない
     - remoteが設定されていない
-- [ ] コミットID取得
+- [x] コミットID取得
 - [ ] remote urlの変換
   - GithubURLへ変換
     - httpプロトコル
