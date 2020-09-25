@@ -8,6 +8,7 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 function! shareline#helloworld()
+  exec "let @+ = 'hello'"
   echo "Hello World!!!!!!!!!!!!!!!!!"
 endfunction
 

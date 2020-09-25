@@ -4,7 +4,7 @@ shareline.vim
 ## Tasks
 
 - [x] プラグイン動かす
-- [ ] yank
+- [x] yank
 - [ ] 行番号取得
 - [ ] `git remote` 取得
   - エラー処理
