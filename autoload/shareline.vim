@@ -9,8 +9,9 @@ set cpo&vim
 
 function! shareline#helloworld()
   let line = line(".")
-  exec "let @+ = line"
-  echo "Hello World!!!!!!!!!!!!!!!!!"
+  let remote = substitute(system('git remote get-url origin'), '\n\+$', '', '')
+  exec "let @+ = remote"
+  echo "Hello World!!!!!!!!!!!!!!!!!" . remote
 endfunction
 
 let &cpo = s:save_cpo
