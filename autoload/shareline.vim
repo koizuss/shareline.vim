@@ -7,12 +7,35 @@ endif
 let s:save_cpo = &cpo
 set cpo&vim
 
-function! shareline#helloworld()
+function! s:get_repos_url(remote) abort
+  let https = matchstr(a:remote, '^https://github\.com')
+  if !empty(https)
+    return substitute(a:remote, '\.git$', '', '')
+  endif
+
+  let ssh = matchstr(a:remote, '^git@github\.com')
+  if !empty(ssh)
+    return "https://github.com/" . substitute(substitute(a:remote, '\.git$', '', ''), '^git@github\.com:', '', '')
+  endif
+
+  throw "This remote is not Github repos [".a:remote."]"
+endfunction
+
+function! s:get_path() abort
+  let root_path = substitute(system('git rev-parse --show-toplevel'), '\n\+$', '', '')
+  return substitute(expand("%:p"), '^' . root_path . '/', '', '')
+endfunction
+
+function! shareline#yank()
   let line = line(".")
   let remote = substitute(system('git remote get-url origin'), '\n\+$', '', '')
   let commit = substitute(system('git show -s --format=%H'), '\n\+$', '', '')
-  exec "let @+ = remote"
-  echo "Hello World!!!!!!!!!!!!!!!!!" . remote
+  let repos = s:get_repos_url(remote)
+  let path = s:get_path()
+  let url = repos . "/blob/" . commit . "/" . path . "#L" . line
+
+  exec "let @+ = url"
+  echo "yank " . url
 endfunction
 
 let &cpo = s:save_cpo

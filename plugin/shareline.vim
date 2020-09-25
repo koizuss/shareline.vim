@@ -8,9 +8,7 @@ let g:loaded_shareline = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
-" command! -nargs=0 STDetect call spatab#Execute()
-
-nmap z :call shareline#helloworld()<CR>
+command! -nargs=0 ShareLine call shareline#yank()
 
 let &cpo = s:save_cpo
 unlet s:save_cpo

@@ -1,21 +1,19 @@
 shareline.vim
 ====================
 
-## Tasks
+ローカルVimで見ているsrcをメンバーに共有する時に使用するプラグイン
+今見ているsrcのカーソル行をリモートリポジトリのURLへ変換してyankします
+※ VimのyankをOSのクリップボードと共有すると捗ります
 
-- [x] プラグイン動かす
-- [x] yank
-- [x] 行番号取得
-- [x] `git remote` 取得
-  - エラー処理
-    - gitコマンドがない
-    - gitリポジトリじゃない
-    - remoteが設定されていない
-- [x] コミットID取得
-- [ ] remote urlの変換
-  - GithubURLへ変換
-    - httpプロトコル
-    - gitプロトコル
-  - エラー処理
-    - Githubリポジトリじゃない
-- [ ] URL構築
+## Usage
+
+Run `:ShareLine`
+
+- 現在のファイル&カーソル行をGithubのURLに変換してyank
+
+## TODOs
+
+- エラー処理
+  - gitコマンドがない
+  - gitリポジトリじゃない
+  - remoteが設定されていない
