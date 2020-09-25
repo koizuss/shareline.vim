@@ -3,7 +3,7 @@ shareline.vim
 
 ## Tasks
 
-- [ ] プラグイン動かす
+- [x] プラグイン動かす
 - [ ] yank
 - [ ] 行番号取得
 - [ ] `git remote` 取得
