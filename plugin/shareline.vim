@@ -8,7 +8,7 @@ let g:loaded_shareline = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
-command! -nargs=0 ShareLine call shareline#yank()
+command! -range ShareLine :<line1>,<line2>call shareline#yank()
 
 let &cpo = s:save_cpo
 unlet s:save_cpo

@@ -15,7 +15,7 @@ shareline.vim
 
 Run `:ShareLine`
 
-- 現在のファイル&カーソル行をGithubのURLに変換してyank
+- 現在のファイル&カーソル行（またはVisualモード選択行）をGithubのURLに変換してyank
 
 ![shareline vim_usage_1](https://user-images.githubusercontent.com/639857/94299929-445e3c00-ffa3-11ea-902f-d46b06e2f25c.gif)
 

@@ -26,14 +26,17 @@ function! s:get_path() abort
   return substitute(expand("%:p"), '^' . root_path . '/', '', '')
 endfunction
 
-function! shareline#yank()
-  let line = line(".")
+function! s:get_url() abort
   let remote = substitute(system('git remote get-url origin'), '\n\+$', '', '')
   let commit = substitute(system('git show -s --format=%H'), '\n\+$', '', '')
   let repos = s:get_repos_url(remote)
   let path = s:get_path()
-  let url = repos . "/blob/" . commit . "/" . path . "#L" . line
+  return repos . "/blob/" . commit . "/" . path
+endfunction
 
+function! shareline#yank() range
+  let line = a:firstline == a:lastline ? "#L" . line(".") : "#L" . a:firstline . "-L" . a:lastline
+  let url = s:get_url() . line
   exec "let @+ = url"
   echo "yank " . url
 endfunction
