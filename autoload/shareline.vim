@@ -13,9 +13,14 @@ function! s:get_repos_url(remote) abort
     return substitute(a:remote, '\.git$', '', '')
   endif
 
-  let ssh = matchstr(a:remote, '^git@github\.com')
-  if !empty(ssh)
+  let git = matchstr(a:remote, '^git@github\.com')
+  if !empty(git)
     return "https://github.com/" . substitute(substitute(a:remote, '\.git$', '', ''), '^git@github\.com:', '', '')
+  endif
+
+  let ssh = matchstr(a:remote, '^ssh://git@github.com')
+  if !empty(ssh)
+    return "https://github.com" . substitute(substitute(a:remote, '.git$', '', ''), '^ssh://git@github.com', '', '')
   endif
 
   throw "This remote is not Github repos [".a:remote."]"
