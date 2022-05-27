@@ -24,7 +24,7 @@ Run `:ShareLine`
 - いまのところGithubリポジトリにしか対応していません（今後他も対応したいBitbucketとかGitLabとか）
 - 以下の環境でしか動作確認できていません :bow:
   - macOS 10.15.6（19G2021）
-  - NVIM v0.4.4
+  - NVIM v0.4.4 / VIM 8.2
   - git version 2.24.3 (Apple Git-128)
 
 ## Issues
